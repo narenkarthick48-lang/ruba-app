@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #050507;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #33215d55 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 30%, #6d3f9c55 0 2px, transparent 3px),
+    radial-gradient(circle at 40% 80%, #49318b55 0 2px, transparent 3px);
+  background-size: 130px 130px;
+  animation: drift 15s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-130px); }
+}
+
+.screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 390px;
+  padding: 42px 28px;
+  text-align: center;
+  border: 1px solid #ffffff18;
+  border-radius: 30px;
+  background: #111116dd;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 30px 100px #000;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 25px;
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #8d5cff, #d28cff);
+  box-shadow: 0 0 45px #8d5cff88;
+}
+
+h1 {
+  font-size: 46px;
+  margin-top: 20px;
+}
+
+.login-card p {
+  color: #999;
+  margin: 8px 0 30px;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  border-radius: 16px;
+  background: white;
+  color: #111;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.google-btn span {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.login-card small {
+  display: block;
+  color: #666;
+  margin-top: 18px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+.topbar {
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.brand span {
+  color: #a46cff;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.topbar small {
+  color: #777;
+}
+
+.profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.profile img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.profile button {
+  background: #ffffff12;
+  color: white;
+  border: 0;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+main {
+  padding: 25px 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.welcome {
+  margin: 35px 0 25px;
+}
+
+.tiny {
+  color: #9366ff;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.welcome h2 {
+  font-size: 34px;
+  margin: 10px 0;
+}
+
+.welcome p:last-child {
+  color: #777;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #ffffff0b;
+  border: 1px solid #ffffff10;
+  padding: 15px;
+  border-radius: 17px;
+  margin-bottom: 25px;
+}
+
+.search input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: white;
+  font-size: 15px;
+}
+
+.room {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px;
+  margin: 12px 0;
+  border: 1px solid #ffffff0d;
+  background: #ffffff08;
+  border-radius: 22px;
+  transition: .2s;
+}
+
+.room:hover {
+  transform: translateY(-2px);
+  background: #ffffff12;
+}
+
+.room div:nth-child(2) {
+  flex: 1;
+}
+
+.room p {
+  color: #777;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.room > span {
+  color: #777;
+  font-size: 25px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+
+.a1 { background: #39206d; }
+.a2 { background: #173c50; }
+.a3 { background: #49351b; }
+
+.bottom-nav {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 30px);
+  max-width: 560px;
+  padding: 10px;
+  border-radius: 22px;
+  background: #15151bdd;
+  border: 1px solid #ffffff12;
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-nav button {
+  border: 0;
+  background: transparent;
+  color: #777;
+  font-size: 23px;
+  padding: 8px 18px;
+}
+
+.bottom-nav button small {
+  display: block;
+  font-size: 9px;
+  margin-top: 3px;
+}
+
+.bottom-nav .active {
+  color: white;
+}
+
+@media (min-width: 700px) {
+  .app main {
+    padding-top: 50px;
+  }
+  }
