@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruba — Your Space</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stars"></div>
+
+  <section id="loginScreen" class="screen">
+    <div class="login-card">
+      <div class="logo">R</div>
+      <h1>Ruba</h1>
+      <p>A different way to connect.</p>
+      <button id="googleLogin" class="primary-btn"><span>G</span> Continue with Google</button>
+      <small>Secure sign-in powered by Google</small>
+    </div>
+  </section>
+
+  <section id="setupScreen" class="screen hidden">
+    <div class="setup-card">
+      <div class="mini-logo">🌹</div>
+      <p class="eyebrow">CREATE YOUR RUBA IDENTITY</p>
+      <h2>Make your space yours.</h2>
+      <p class="muted">Choose a username. Your unique Ruba Code will be created automatically.</p>
+
+      <label>Username</label>
+      <div class="username-box">
+        <span>@</span>
+        <input id="usernameInput" maxlength="24" autocomplete="off" placeholder="yourname">
+      </div>
+      <div id="usernameStatus" class="hint">3–24 characters</div>
+
+      <div class="mode-grid">
+        <button class="mode active" data-mode="private">
+          <strong>🔒 Private</strong>
+          <span>People need your approval before chatting.</span>
+        </button>
+        <button class="mode" data-mode="public">
+          <strong>🌎 Public</strong>
+          <span>People can start a chat with you directly.</span>
+        </button>
+      </div>
+
+      <button id="createProfile" class="primary-btn" disabled>Enter Ruba →</button>
+    </div>
+  </section>
+
+  <section id="appScreen" class="app hidden">
+    <header class="topbar">
+      <div class="brand">Ruba<span>●</span></div>
+      <div class="profile-mini">
+        <img id="userPhoto" alt="">
+        <button id="logout" title="Sign out">↪</button>
+      </div>
+    </header>
+
+    <main id="mainContent">
+      <section id="homeView" class="view">
+        <div class="hero">
+          <p class="eyebrow">YOUR RUBA WORLD</p>
+          <h2 id="welcomeText">Hello 👋</h2>
+          <p class="muted">Find a person, open a space, or just explore.</p>
+        </div>
+
+        <div class="search">
+          <span>⌕</span>
+          <input id="searchBox" placeholder="Search username or Ruba Code..." autocomplete="off">
+        </div>
+        <div id="searchResults" class="results"></div>
+
+        <div class="feature-grid">
+          <button class="feature" data-view="chats"><span>💬</span><b>Whisper</b><small>Private conversations</small></button>
+          <button class="feature" data-view="videos"><span>🎬</span><b>30 Sec</b><small>Short moments</small></button>
+          <button class="feature" data-view="instant"><span>📸</span><b>Instant</b><small>Quick photos</small></button>
+          <button class="feature" data-view="profile"><span>🌹</span><b>My Ruba</b><small>Your identity</small></button>
+        </div>
+      </section>
+
+      <section id="chatsView" class="view hidden">
+        <div class="section-head"><button class="back" data-view="home">‹</button><div><p class="eyebrow">WHISPER</p><h2>Your chats</h2></div></div>
+        <div id="chatList" class="empty"><div>💬</div><b>No conversations yet</b><p>Search for someone and start your first Ruba conversation.</p></div>
+      </section>
+
+      <section id="videosView" class="view hidden">
+        <div class="section-head"><button class="back" data-view="home">‹</button><div><p class="eyebrow">30 SEC</p><h2>Short moments</h2></div></div>
+        <div class="coming"><span>🎬</span><b>30 seconds. That's it.</b><p>The short-video space is ready for the next build.</p></div>
+      </section>
+
+      <section id="instantView" class="view hidden">
+        <div class="section-head"><button class="back" data-view="home">‹</button><div><p class="eyebrow">INSTANT</p><h2>Instant photos</h2></div></div>
+        <div class="coming"><span>📸</span><b>Capture the moment.</b><p>Photo sharing will live here, separate from your chats.</p></div>
+      </section>
+
+      <section id="profileView" class="view hidden">
+        <div class="section-head"><button class="back" data-view="home">‹</button><div><p class="eyebrow">MY RUBA</p><h2>Your identity</h2></div></div>
+        <div class="identity-card">
+          <img id="profilePhoto" alt="">
+          <h3 id="profileName">—</h3>
+          <p id="profileUsername">@—</p>
+          <div class="ruba-code" id="profileCode">RBA-———-——</div>
+          <div class="privacy-pill" id="profileMode">🔒 Private</div>
+          <p class="muted">Share your Ruba Code or username so people can find you.</p>
+        </div>
+      </section>
+
+      <section id="chatView" class="view hidden">
+        <div class="chat-header">
+          <button class="back" data-view="chats">‹</button>
+          <img id="chatPhoto" alt="">
+          <div><b id="chatName">Chat</b><small id="chatUsername"></small></div>
+        </div>
+        <div id="messages" class="messages"></div>
+        <form id="messageForm" class="composer">
+          <input id="messageInput" maxlength="2000" placeholder="Say something..." autocomplete="off">
+          <button type="submit">➤</button>
+        </form>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="active" data-view="home">⌂<small>Home</small></button>
+      <button data-view="chats">◌<small>Whisper</small></button>
+      <button data-view="videos">✦<small>30 Sec</small></button>
+      <button data-view="profile">◎<small>Me</small></button>
+    </nav>
+  </section>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
